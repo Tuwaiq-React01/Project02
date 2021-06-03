@@ -10,6 +10,10 @@
 </h1>
 <h4 align="center">State, Lifecycles, and Axios implementation</h4>
 
+## [► Live Demo](https://younesalturkey.github.io/Project02/)
+
+<br/>
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/YounesAlturkey/Project02/main/frontend/public/demo.png" alt="demo"/>
 </p>
