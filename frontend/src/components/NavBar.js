@@ -5,9 +5,8 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Avatar from '@material-ui/core/Avatar'
 import { Typography } from '@material-ui/core'
 import { Link } from 'react-router-dom'
-import StoreIcon from '@material-ui/icons/Store'
-import AccountBoxIcon from '@material-ui/icons/AccountBox'
-import DoneOutlineIcon from '@material-ui/icons/DoneOutline'
+import AccountBalanceIcon from '@material-ui/icons/AccountBalance'
+import ExitToAppIcon from '@material-ui/icons/ExitToApp'
 import CodeIcon from '@material-ui/icons/Code'
 import { ButtonBase } from '@material-ui/core'
 
@@ -17,10 +16,10 @@ const useStyles = makeStyles((theme) => ({
   },
   brand: {
     marginRight: theme.spacing(4),
-    padding: theme.spacing(1),
+    padding: theme.spacing(2),
   },
   typography: {
-    fontFamily: 'Orbitron',
+    fontFamily: 'Balsamiq Sans',
     textDecoration: 'none',
     color: 'white',
     marginLeft: theme.spacing(1),
@@ -50,13 +49,13 @@ export default function NavBar() {
               src="https://raw.githubusercontent.com/tuwaiq-dotnet/json-parser-team-yaai/main/logo.png"
             />
             <Typography variant="h6" className={classes.typography}>
-              Tuwaiq Store
+              Tuwaiq Acedmy
             </Typography>
           </ButtonBase>
 
           <ButtonBase className={classes.navItem} component={Link} to={'/'}>
-            <StoreIcon fontSize="small" />
-            <Typography className={classes.typography}>Store</Typography>
+            <AccountBalanceIcon fontSize="small" />
+            <Typography className={classes.typography}>Acedmy</Typography>
           </ButtonBase>
 
           <ButtonBase
@@ -64,27 +63,18 @@ export default function NavBar() {
             component={Link}
             to={'/customers'}
           >
-            <AccountBoxIcon fontSize="small" />
-            <Typography className={classes.typography}>Customers</Typography>
+            <ExitToAppIcon fontSize="small" />
+            <Typography className={classes.typography}>Logout</Typography>
           </ButtonBase>
 
           <ButtonBase
             className={classes.navItem}
-            component={Link}
-            to={'/orders'}
-          >
-            <DoneOutlineIcon fontSize="small" />
-            <Typography className={classes.typography}>Orders</Typography>
-          </ButtonBase>
-
-          <ButtonBase
-            className={classes.navItem}
-            href="https://tuwaiqstoreapi.azurewebsites.net/swagger/index.html"
+            href="https://tuwaiqacademyapi.azurewebsites.net/swagger/index.html"
             target="_blank"
             rel="noreferrer noopener"
           >
             <CodeIcon fontSize="small" />
-            <Typography className={classes.typography}>Api</Typography>
+            <Typography className={classes.typography}>Swagger UI</Typography>
           </ButtonBase>
         </Toolbar>
       </AppBar>

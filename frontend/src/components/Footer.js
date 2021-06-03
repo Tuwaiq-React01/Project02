@@ -4,8 +4,8 @@ import Typography from '@material-ui/core/Typography'
 
 const useStyles = makeStyles((theme) => ({
   typography: {
-    fontFamily: 'Orbitron',
-    color: 'white',
+    fontFamily: 'Balsamiq Sans',
+    color: '#121212',
   },
 }))
 
