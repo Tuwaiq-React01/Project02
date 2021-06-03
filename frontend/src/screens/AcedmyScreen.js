@@ -19,8 +19,9 @@ import Loader from '../components/LinearIndeterminate'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Button from '@material-ui/core/Button'
-
 import axios from 'axios'
+
+const proxy = 'https://tuwaiqacademyapi.azurewebsites.net'
 
 const useStyles = makeStyles((theme) => ({
   home: {
@@ -74,7 +75,7 @@ const AcedmyScreen = () => {
 
   useEffect(() => {
     axios
-      .get('/api/student')
+      .get(`${proxy}/api/student`)
       .then(function (response) {
         const studentsArray = []
 
@@ -98,7 +99,7 @@ const AcedmyScreen = () => {
       })
 
     return () => {
-      console.log('The component has unmounted')
+      // console.log('The component has unmounted')
     }
   }, [students, selectedStudent])
 
@@ -109,7 +110,7 @@ const AcedmyScreen = () => {
       return student.id !== id
     })
     axios
-      .delete(`/api/student/${id}`)
+      .delete(`${proxy}/api/student/${id}`)
       .then(function (response) {
         if (response.status === 200) {
           setStudents(studentsList)
@@ -155,7 +156,7 @@ const AcedmyScreen = () => {
       phone: phone,
     }
     axios
-      .put(`/api/student/${id}`, student)
+      .put(`${proxy}/api/student/${id}`, student)
       .then(function (response) {
         console.log(response)
         if (response.status === 200) {
@@ -195,7 +196,7 @@ const AcedmyScreen = () => {
       phone: phone,
     }
     axios
-      .post(`/api/student`, student)
+      .post(`${proxy}/api/student`, student)
       .then(function (response) {
         if (response.status === 201) {
           setStudents(students)
@@ -260,7 +261,7 @@ const AcedmyScreen = () => {
                     setLogin(false)
                     setTimeout(() => {
                       setLoading(false)
-                    }, 1000)
+                    }, 3000)
                   }}
                   fullWidth
                   variant="contained"

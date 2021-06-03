@@ -52,7 +52,11 @@ export default function NavBar() {
             </Typography>
           </ButtonBase>
 
-          <ButtonBase className={classes.navItem} component={Link} to={'/'}>
+          <ButtonBase
+            className={classes.navItem}
+            component={Link}
+            to={'/Project02'}
+          >
             <AccountBalanceIcon fontSize="small" />
             <Typography className={classes.typography}>Acedmy</Typography>
           </ButtonBase>

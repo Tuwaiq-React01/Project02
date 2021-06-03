@@ -37,7 +37,7 @@ export default function App() {
       <Router>
         <NavBar />
         <Switch>
-          <Route path="/" component={AcedmyScreen} exact />
+          <Route path="/Project02" component={AcedmyScreen} exact />
         </Switch>
         <Footer />
       </Router>
