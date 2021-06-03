@@ -158,7 +158,6 @@ const AcedmyScreen = () => {
     axios
       .put(`${proxy}/api/student/${id}`, student)
       .then(function (response) {
-        console.log(response)
         if (response.status === 200) {
           setStudents(students)
           setTimeout(() => {
