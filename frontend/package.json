@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "homepage": "https://younesalturkey.github.io/react-movieslist",
+  "homepage": "https://younesalturkey.github.io/Project02/",
   "proxy": "https://tuwaiqacademyapi.azurewebsites.net/",
   "version": "0.1.0",
   "private": true,
