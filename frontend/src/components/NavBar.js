@@ -6,7 +6,6 @@ import Avatar from '@material-ui/core/Avatar'
 import { Typography } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance'
-import ExitToAppIcon from '@material-ui/icons/ExitToApp'
 import CodeIcon from '@material-ui/icons/Code'
 import { ButtonBase } from '@material-ui/core'
 
@@ -56,15 +55,6 @@ export default function NavBar() {
           <ButtonBase className={classes.navItem} component={Link} to={'/'}>
             <AccountBalanceIcon fontSize="small" />
             <Typography className={classes.typography}>Acedmy</Typography>
-          </ButtonBase>
-
-          <ButtonBase
-            className={classes.navItem}
-            component={Link}
-            to={'/customers'}
-          >
-            <ExitToAppIcon fontSize="small" />
-            <Typography className={classes.typography}>Logout</Typography>
           </ButtonBase>
 
           <ButtonBase
