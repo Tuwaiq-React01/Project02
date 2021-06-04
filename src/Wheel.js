@@ -1,16 +1,6 @@
 import { createEvent } from '@testing-library/dom';
 import React, { Component } from 'react'
 
-// const sectors = [
-//     { color: "#f82", label: "Stack" },
-//     { color: "#0bf", label: "10" },
-//     { color: "#fb0", label: "200" },
-//     { color: "#0fb", label: "50" },
-//     { color: "#b0f", label: "100" },
-//     { color: "#f0b", label: "5" },
-//     { color: "#bf0", label: "500" },
-// ];
-
 export default class Wheel extends Component {
 
     constructor(props) {
@@ -20,8 +10,6 @@ export default class Wheel extends Component {
     componentDidMount() {
 
         const sectors = this.props.wheelSectors;
-        const colors = this.props.colors;
-        const labels = this.props.labels;
 
         const rand = (m, M) => Math.random() * (M - m) + m;
         const tot = sectors.length;
@@ -55,7 +43,7 @@ export default class Wheel extends Component {
             ctx.rotate(ang + arc / 2);
             ctx.textAlign = "right";
             ctx.fillStyle = "#fff";
-            ctx.font = "bold 30px sans-serif";
+            ctx.font = "bold 20px sans-serif";
             ctx.fillText(sector.label, rad - 10, 10);
             //
             ctx.restore();
@@ -96,7 +84,7 @@ export default class Wheel extends Component {
     render() {
         return (
             <div id="wheelOfFortune" >
-                <canvas id="wheel" width="300" height="300"></canvas>
+                <canvas id="wheel" width="400" height="400"></canvas>
                 <div id="spin">SPIN</div>
             </div>
         )

@@ -8,7 +8,6 @@ export default class Item extends Component {
         }
     }
     render() {
-        console.log("I am the Item!!");
         return (
             <div>
                 <li>{this.props.item}</li>
