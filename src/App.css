@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(1, 100%);
+}
+
+@media (min-width: 600px) {
+  .App {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+  }
+}
+@media (min-width: 900px) {
+  .App {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+  }
+}

@@ -1,0 +1,39 @@
+.MovieInfo {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+.poster {
+  border-radius: 8px;
+}
+p {
+  display: inline;
+}
+.details {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.MovieName {
+  color: blue;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: start;
+}
+.infoTitle {
+  font-weight: bold;
+}
+
+button {
+  padding: 10px;
+  background-color: orange;
+  color: white;
+  font-weight: 600;
+  border: 0;
+  border-radius: 8px;
+}
