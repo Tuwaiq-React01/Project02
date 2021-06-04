@@ -9,7 +9,6 @@ export default class Image extends Component {
             isChanged: false
 
         };
-        //let isChanged = false;
 
         this.handleChange = this.handleChange.bind(this);
     }

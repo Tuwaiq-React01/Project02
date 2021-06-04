@@ -1,7 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
+
+
 import Image from './Image.js';
-import Input from './Input'
+
 
 function App() {
   return (
