@@ -7,7 +7,13 @@ import React, {useState} from 'react';
 
 
 function App() {
-  const games = ["gta", "cod", "ghost", "mw", "bocw", "rdr"];
+  const games = [
+    { gameName: 'gta' , id : 1},
+    { gameName: 'bocw' , id : 2},
+    { gameName: 'cod' , id : 3},
+    { gameName: 'mw3' , id : 4},
+    { gameName: 'mw2' , id : 5},
+  ]
   const [fav, setFav] = useState([]);
 
 
@@ -19,7 +25,6 @@ function App() {
   return (
     <>
       <NavBar favList={fav.length}/>
-    <h4>{fav}</h4>
       <div className="container mt-sm-5">
         <Games list={games} addToFav={addToFav}/>
       </div>

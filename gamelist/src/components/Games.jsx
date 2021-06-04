@@ -5,7 +5,7 @@ export default class Games extends Component {
     super(props);
     this.state = {
       games: [],
-      favs: ''
+      favs: []
     };
   }
 
@@ -15,11 +15,14 @@ export default class Games extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.favs !== this.state.favs) {
-      this.props.addToFav('haha');
-      this.state.favs = ''
+      this.props.addToFav(this.state.favs);
+      this.state.favs = []
     }
   }
 
+  addFav(game){
+      this.setState({favs: [...this.state.favs, game]})
+  }
 
 
   render() {
@@ -35,14 +38,14 @@ export default class Games extends Component {
               height="250px"
             />
             <div className="card-body">
-              <h5 className="card-title">{game}</h5>
+              <h5 className="card-title"> {game.gameName} </h5>
               <p className="card-text">
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
-              <a href="#" className="btn btn-primary">
-                Go somewhere
-              </a>
+              <button onClick={()=> this.addFav(game)} className="btn btn-primary">
+                Add to Favorite
+              </button>
             </div>
           </div>
         </div>
@@ -51,7 +54,6 @@ export default class Games extends Component {
 
     return (
       <div>
-          <button onClick={()=> {this.setState({favs : 'banana'})}}>ADDDDD</button>
         <div className="row">{displayGames}</div>
       </div>
     );
