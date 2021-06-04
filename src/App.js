@@ -90,7 +90,8 @@ export default class App extends Component {
     ))
     return (
       <div className="App">
-        <div className="App-header">
+        <div className="App-header">          
+        <h1 class="display-4 text-muted">Tuwaiq Random Picker</h1>
           <img src={logo} width="150" height="100" class="rounded mx-auto d-block mb-4" />
           {this.state.OKClicked ? null :
             <div>
@@ -100,8 +101,8 @@ export default class App extends Component {
                 </div>
                 <input type="text" placeholder="Add your item here!!" onChange={(e) => this.onChangeText(e)} value={this.state.newItem} class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-default" />
               </div>
-              <button type="button" className="btn btn-warning mx-2" onClick={(e) => this.state.newItem!==""?this.addTheItem(e):null}>ADD</button>
-              <button type="button" className="btn btn-warning mx-2" onClick={(e) => this.state.itemsList.length<2?null:this.showWheel(e)}>SPIN!!</button>
+              <button type="button" className="btn btn-warning" onClick={(e) => this.state.newItem!==""?this.addTheItem(e):null}>ADD</button>
+              <button type="button" className="btn btn-warning mx-3" onClick={(e) => this.state.itemsList.length<2?null:this.showWheel(e)}>SPIN</button>
             </div>
           }
           <div>
