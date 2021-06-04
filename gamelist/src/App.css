@@ -38,9 +38,27 @@
 }
 
 
+.card{
+  transition: transform .2s; /* Animation */
+}
 
-
+.card:hover {
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
 
 .card-body{
   box-shadow: 0 0 20px 7px rgba(0,0,0,0.1);
 }
+
+
+
+.soc-med{
+  color:black;
+  text-decoration:none;
+}
+  .soc-med:hover {
+      color: black;
+      text-decoration: none;
+  }
+
+  

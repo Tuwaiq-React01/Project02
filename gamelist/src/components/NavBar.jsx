@@ -1,6 +1,16 @@
 import React, { Component } from 'react'
 
 export default class NavBar extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            comp: ''
+        }
+    }
+
+    componentDidMount(){
+        this.setState({comp: this.props.test})
+    }
     render() {
         return (
             <div>
@@ -19,13 +29,16 @@ export default class NavBar extends Component {
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">GAMES</a>
+          <a class="nav-link" href="#">Games</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">GAMES DB</a>
+          <a class="nav-link" href="#">Database</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Favorites <span class="badge rounded-pill bg-secondary">{this.props.favList}</span></a>
         </li>
 
       </ul>

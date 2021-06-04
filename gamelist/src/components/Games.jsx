@@ -5,6 +5,7 @@ export default class Games extends Component {
     super(props);
     this.state = {
       games: [],
+      favs: ''
     };
   }
 
@@ -12,10 +13,19 @@ export default class Games extends Component {
     this.setState({ games: this.props.list });
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.favs !== this.state.favs) {
+      this.props.addToFav('haha');
+      this.state.favs = ''
+    }
+  }
+
+
+
   render() {
     const displayGames = this.state.games.map((game, i) => {
       return (
-        <div className="col-md-3 mt-2" key={i}>
+        <div className="col-md-3 mt-5" key={i}>
           <div className="card" style={{ width: "18rem" }}>
             <img
               src="https://static.posters.cz/image/750/poster/call-of-duty-black-ops-cover-i8700.jpg"
@@ -41,6 +51,7 @@ export default class Games extends Component {
 
     return (
       <div>
+          <button onClick={()=> {this.setState({favs : 'banana'})}}>ADDDDD</button>
         <div className="row">{displayGames}</div>
       </div>
     );
