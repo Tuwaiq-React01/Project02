@@ -15,7 +15,9 @@
   
   ## Demo
   
-  ![Demo](https://user-images.githubusercontent.com/82468827/120862751-1e595480-c592-11eb-9478-c0fffe74a2b3.gif)
+  
+![Demo](https://user-images.githubusercontent.com/82468827/120863002-8740cc80-c592-11eb-901e-d108fc3a60c8.gif)
+
 
 
 
