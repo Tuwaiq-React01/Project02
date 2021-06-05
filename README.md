@@ -1,23 +1,14 @@
+# Trending Videos
 
-<div dir="rtl">
-  
- # مشروع الإسبوع الثاني 
-  
-  <br/>
-  <br/>
-  
-  ## الوصف
-اختيار فكرة المشروع راجعة للطالب بحيث يتم ادراج المتطلبات ادناه كاملةً. 
-<br>
-<br>
+## Images
 
-##  المتطلبات 
-- تطبيق State
-- تطبيق دالتين على الأقل من دوال Lifecycle
-- تطبيق axios
+## Home Page
 
-  
-   **ملاحظة** :
-  بعد الانتهاء من تنفيذ المشروع يرجى إضافة صورة من واجهة الصفحة في ملف README.md
+![alt text](https://res.cloudinary.com/duuconncq/image/upload/v1622920366/Screenshot_2021-06-05_221024_rmpjo2.png)
 
-  </div>
+## All Videos
+
+![alt text](https://res.cloudinary.com/duuconncq/image/upload/v1622920371/Screenshot_2021-06-05_221128_odj503.png)
+
+## After Select Video
+![alt text](https://res.cloudinary.com/duuconncq/image/upload/v1622920368/Screenshot_2021-06-05_221220_ewmrma.png)
