@@ -1,0 +1,16 @@
+.content1
+{
+  background: 50% 50% / cover;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    position: absolute;
+    background-image: url('https://cdnb.artstation.com/p/assets/images/images/005/137/123/large/mac-rebisz-20170306-blue-sunrise-007-2560.jpg?1488757916');
+    min-height: 100vh;
+  
+}
+.content2{
+  padding-top: 600px;
+  background-color: rgb(32, 4, 15);
+}

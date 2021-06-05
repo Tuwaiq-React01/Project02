@@ -1,0 +1,18 @@
+.container{
+    margin-top: 105px;
+    margin-bottom: 70px;
+
+}
+.leftCol
+{
+    font-size: 100px;
+    font-weight: bold;
+    color:white;
+}
+.rightCol
+{
+    color:white;
+    background-color: rgb(56, 13, 20);
+    padding: 15px 10px 15px 20px;
+
+}
