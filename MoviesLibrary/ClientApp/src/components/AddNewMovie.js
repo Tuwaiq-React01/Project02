@@ -7,35 +7,44 @@ class AddNewMovie extends Component {
         super(props);
         this.state = {
             title: "",
-            date:"",
-            summary:"",
+            date: "",
+            summary: "",
             rating: 0,
             poster: "",
             favoriteMovie: null,
-            loading: true };
+            Unmount: false
+        };
     }
-    
-    titleOnChange(event){
+
+    componentWillUnmount() {
+        this.setState({Unmount: true})
+    }
+
+    titleOnChange(event) {
         this.setState({title: event.target.value})
     }
-    dateOnChange(event){
+
+    dateOnChange(event) {
         this.setState({date: event.target.value})
     }
-    summaryOnChange(event){
+
+    summaryOnChange(event) {
         this.setState({summary: event.target.value})
     }
-    ratingOnChange(event){
+
+    ratingOnChange(event) {
         let rating = parseInt(event.target.value, 10)
-        if (rating > 10 || rating < 1 || isNaN(rating)){
+        if (rating > 10 || rating < 1 || isNaN(rating)) {
             rating = 5
         }
         this.setState({rating: rating})
     }
-    posterOnChange(event){
+
+    posterOnChange(event) {
         this.setState({poster: event.target.value})
     }
-    
-    submit(){
+
+    submit() {
         axios.post("https://localhost:5001/api/movies", {
             title: this.state.title,
             date: this.state.date,
@@ -46,8 +55,9 @@ class AddNewMovie extends Component {
             console.log(res);
             this.props.history.push("/movies");
         }).catch(err => console.log(err));
+        this.setState({Unmount: true})
     }
-    
+
     render() {
         // console.log(this.state.title)
         // console.log(this.state.date)
@@ -67,77 +77,84 @@ class AddNewMovie extends Component {
                         backgroundColor: "#1c212a"
                     }}
                 >
-                    <div className="mb-3">
-                        <label htmlFor="title" className="form-label">
-                            Title
-                        </label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            id="title"
-                            aria-describedby="titleHelp"
-                            onChange={(event) => this.titleOnChange(event)}
-                        />
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="date" className="form-label">
-                            Date
-                        </label>
-                        <input 
-                            type="date" 
-                            className="form-control" 
-                            id="date" 
-                            onChange={(event) => this.dateOnChange(event)}
-                        />
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="summary" className="form-label">
-                            summary
-                        </label>
-                        <textarea 
-                            rows="3" 
-                            className="form-control" 
-                            id="summary"
-                            onChange={(event) => this.summaryOnChange(event)}
-                        />
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="rating" className="form-label">
-                            Rating
-                        </label>
-                        <input 
-                            type="number" 
-                            className="form-control" 
-                            id="rating"
-                            min="1" 
-                            max="10"
-                            onChange={(event) => this.ratingOnChange(event)}
-                        />
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="poster" className="form-label">
-                            Poster
-                        </label>
-                        <input 
-                            type="text" 
-                            className="form-control" 
-                            id="poster"
-                            onChange={(event) => this.posterOnChange(event)}
-                        />
-                    </div>
-                    <div className="mb-3 form-check">
-                        <input
-                            type="checkbox"
-                            className="form-check-input"
-                            id="exampleCheck1"
-                        />
-                        <label className="form-check-label" htmlFor="exampleCheck1">
-                            Check me out
-                        </label>
-                    </div>
-                    <button type="submit" onClick={() => this.submit()} className="btn btn-primary">
-                        Submit
-                    </button>
+                    {this.state.Unmount ?
+                        <div className="spinner-border text-danger" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </div> :
+                        <div>
+                            <div className="mb-3">
+                                <label htmlFor="title" className="form-label">
+                                    Title
+                                </label>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    id="title"
+                                    aria-describedby="titleHelp"
+                                    onChange={(event) => this.titleOnChange(event)}
+                                />
+                            </div>
+                            <div className="mb-3">
+                                <label htmlFor="date" className="form-label">
+                                    Date
+                                </label>
+                                <input
+                                    type="date"
+                                    className="form-control"
+                                    id="date"
+                                    onChange={(event) => this.dateOnChange(event)}
+                                />
+                            </div>
+                            <div className="mb-3">
+                                <label htmlFor="summary" className="form-label">
+                                    summary
+                                </label>
+                                <textarea
+                                    rows="3"
+                                    className="form-control"
+                                    id="summary"
+                                    onChange={(event) => this.summaryOnChange(event)}
+                                />
+                            </div>
+                            <div className="mb-3">
+                                <label htmlFor="rating" className="form-label">
+                                    Rating
+                                </label>
+                                <input
+                                    type="number"
+                                    className="form-control"
+                                    id="rating"
+                                    min="1"
+                                    max="10"
+                                    onChange={(event) => this.ratingOnChange(event)}
+                                />
+                            </div>
+                            <div className="mb-3">
+                                <label htmlFor="poster" className="form-label">
+                                    Poster
+                                </label>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    id="poster"
+                                    onChange={(event) => this.posterOnChange(event)}
+                                />
+                            </div>
+                            <div className="mb-3 form-check">
+                                <input
+                                    type="checkbox"
+                                    className="form-check-input"
+                                    id="exampleCheck1"
+                                />
+                                <label className="form-check-label" htmlFor="exampleCheck1">
+                                    Check me out
+                                </label>
+                            </div>
+                            <button type="submit" onClick={() => this.submit()} className="btn btn-primary">
+                                Submit
+                            </button>
+                        </div>
+                    }
                 </div>
             </div>
         );
