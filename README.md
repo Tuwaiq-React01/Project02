@@ -21,3 +21,9 @@
   بعد الانتهاء من تنفيذ المشروع يرجى إضافة صورة من واجهة الصفحة في ملف README.md
 
   </div>
+  
+# Demo
+
+![alt text](https://github.com/anas-alhmoud/Project02/blob/main/demo1.png?raw=true)
+![alt text](https://github.com/anas-alhmoud/Project02/blob/main/demo2.png?raw=true)
+![alt text](https://github.com/anas-alhmoud/Project02/blob/main/demo3.png?raw=true)
