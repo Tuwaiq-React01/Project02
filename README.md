@@ -15,7 +15,9 @@
     <li>External API</li>
     <li>CRUD Operations</li>
 </ul>
-  > The React project is inside Project02/MoviesLibrary/ClientApp/
+  
+> The React project is inside Project02/MoviesLibrary/ClientApp
+  
   <br/>
   <br/>
   
