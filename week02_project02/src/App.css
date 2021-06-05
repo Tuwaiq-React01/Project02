@@ -1,0 +1,138 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.flexbox-container {
+  height: 100% !important;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-center;
+  align-items: center;
+  background-color: black;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  background-color: rebeccapurple;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  height: 300px;
+  background-color: black !important;
+  margin: 10px;
+  color: #fff;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.flip-card {
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 220px;
+  height: 300px;
+  background-color: black !important;
+  margin: 10px;
+  color: #fff;
+  font-size: 36px;
+  font-weight: 600;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  height: 100%;
+  padding: 10px;
+  color: white;
+  background-color: rebeccapurple;
+  border-color: red;
+  font-size: 10px;
+  transform: rotateY(180deg);
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  width: 100%;
+  height: 3em;
+  padding: 10px;
+  display: inline-block;
+}
+
+.bottom {
+  vertical-align: bottom;
+  align-items: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
