@@ -5,7 +5,6 @@ class Card extends Component {
     constructor(props) {
         super(props);
         // this.onTrigger = this.onTrigger.bind(this)
-
     }
 
     onTrigger = () => {

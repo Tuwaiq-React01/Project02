@@ -1,39 +1,46 @@
-@keyframes myAnimation{
-    0%{
+@keyframes myAnimation {
+    0% {
         opacity: 1;
-        right:0;
+        right: 0;
     }
-    100%{
+    100% {
         display: none;
         opacity: 0;
-        right:200px;
+        right: 200px;
     }
 }
 
 
-.mytypeafter{
+.mytypeafter {
     animation-name: myAnimation;
     animation-duration: 2000ms;
     animation-fill-mode: forwards;
     position: relative
 }
-.mytypebefore{margin: auto;
+
+.mytypebefore {
+    animation-name: mynumb;
+    animation-duration: 3000ms;
+    animation-fill-mode: forwards;
+
+    margin: auto;
     width: 100%;
 }
 
 
-@keyframes mynumb{
-    0%{
+@keyframes mynumb {
+    0% {
         opacity: 0;
-        bottom:0px;
+        bottom: 0px;
     }
-    100%{
+    100% {
         display: none;
         opacity: 1;
-        bottom:50em;
+        bottom: 50em;
     }
 }
-.mynumbers{
+
+.mynumbers {
     display: block;
     opacity: 0;
     animation-name: mynumb;
@@ -41,24 +48,26 @@
     animation-fill-mode: forwards;
     position: relative
 }
-.mynumbefore{
+
+.mynumbefore {
     display: none;
     opacity: 0;
 }
 
 
-@keyframes myresult{
-    0%{
+@keyframes myresult {
+    0% {
         opacity: 0;
-        bottom:0px;
+        bottom: 0px;
     }
-    100%{
+    100% {
         display: none;
         opacity: 1;
-        bottom:95em;
+        bottom: 95em;
     }
 }
-.myresult{
+
+.myresult {
     display: block;
     opacity: 0;
     animation-name: myresult;
@@ -68,18 +77,19 @@
 }
 
 
-@keyframes myresultrandom{
-    0%{
+@keyframes myresultrandom {
+    0% {
         opacity: 0;
-        bottom:0px;
+        bottom: 0px;
     }
-    100%{
+    100% {
         display: none;
         opacity: 1;
-        bottom:45em;
+        bottom: 45em;
     }
 }
-.myresultrandom{
+
+.myresultrandom {
     display: block;
     opacity: 0;
     animation-name: myresultrandom;
@@ -88,37 +98,43 @@
     position: relative
 }
 
-.wrimagecard{
+.wrimagecard {
     margin-top: 0;
     margin-bottom: 1.5rem;
     text-align: left;
     position: relative;
     background: #fff;
-    box-shadow: 12px 15px 20px 0px rgba(46,61,73,0.15);
+    box-shadow: 12px 15px 20px 0px rgba(46, 61, 73, 0.15);
     border-radius: 4px;
     transition: all 0.3s ease;
 }
-.wrimagecard .fa{
+
+.wrimagecard .fa {
     position: relative;
     font-size: 70px;
 }
-.wrimagecard-topimage_header{
+
+.wrimagecard-topimage_header {
     padding: 20px;
 }
+
 a.wrimagecard:hover, .wrimagecard-topimage:hover {
-    box-shadow: 2px 4px 8px 0px rgba(46,61,73,0.2);
+    box-shadow: 2px 4px 8px 0px rgba(46, 61, 73, 0.2);
 }
+
 .wrimagecard-topimage a {
     width: 100%;
     height: 100%;
     display: block;
 }
+
 .wrimagecard-topimage_title {
     padding: 20px 24px;
     height: 80px;
     padding-bottom: 0.75rem;
     position: relative;
 }
+
 .wrimagecard-topimage a {
     border-bottom: none;
     text-decoration: none;

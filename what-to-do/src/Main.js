@@ -4,20 +4,22 @@ import './Main.css';
 import axios from 'axios'
 import Result from "./Result";
 
+
+const initState={
+    baseurl: "http://www.boredapi.com/api/activity?",
+    ttype: "",
+    partic: "",
+    showtype: true,
+    showparic: false,
+    random: false,
+    data: "",
+    result: false
+}
 class Main extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            baseurl: "http://www.boredapi.com/api/activity?",
-            ttype: "",
-            partic: "",
-            showtype: true,
-            showparic: false,
-            random: false,
-            data: "",
-            result: false
-        }
+        this.state = initState
         this.carinfo = [{name: "Cocking", image: "https://img.icons8.com/color/256/000000/chef-cooking.png"},
             {name: "Education", image: "https://img.icons8.com/dusk/256/000000/book-and-pencil.png"},
             {name: "DIY", image: "https://img.icons8.com/dusk/256/000000/hammer.png"},
@@ -41,8 +43,8 @@ class Main extends Component {
             })
         }
     }
-    back = ()=>{
-        this.setState()
+    restart = ()=>{
+        this.setState(initState)
     }
     gepartic = (partic) => {
         this.setState({
@@ -88,8 +90,8 @@ class Main extends Component {
                     </div>
                 </div>
                 {}
-                {this.state.result&&!this.state.random ?<Result activity={this.state.data.activity} ccs={"myresult"}/> : null }
-                {this.state.result&&this.state.random ?<Result activity={this.state.data.activity} ccs={"myresultrandom"}/> : null }
+                {this.state.result&&!this.state.random ?<Result activity={this.state.data.activity} restart={this.restart} ccs={"myresult"}/> : null }
+                {this.state.result&&this.state.random ?<Result activity={this.state.data.activity} restart={this.restart} ccs={"myresultrandom"}/> : null }
 
             </div>
         );
