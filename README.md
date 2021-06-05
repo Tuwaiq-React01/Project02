@@ -1,8 +1,14 @@
+
+
+
 # CONTENT
 This project is for education purpose. How to use React and apply a specific concepts .
 
 ## NASA EPIC API
 In this project i will requesting data from NASA open source APIs using axios , it is free and public data that NASA has maintains .
+
+https://user-images.githubusercontent.com/82523761/120873756-2625f280-c5ac-11eb-9d14-d7b4a692471b.mov
+
 
 ## Concepts :
 - State
@@ -49,7 +55,3 @@ In this project i will requesting data from NASA open source APIs using axios , 
 
 ## EPIC API Documentation Page
 Read more about the api from NASA api documentation [here](https://epic.gsfc.nasa.gov/about/api). 
-
-
-
-    
