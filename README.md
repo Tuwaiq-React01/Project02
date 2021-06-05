@@ -1,9 +1,8 @@
-# Quiz App
+# Quiz App ✏️
 
-The idea of this project is quesions & answers to test yourself, it's for fun. It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The idea of this project is quesions & answers to test yourself, it's for fun 🥂. It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## ScreenShots
-
+## ScreenShots 📸
 <img width="849" alt="Quiz App" src="https://user-images.githubusercontent.com/82483633/120875641-8d947000-c5b5-11eb-8cd1-606c98e355e4.png">
 
 
