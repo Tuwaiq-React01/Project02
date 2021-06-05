@@ -1,4 +1,8 @@
-
+# Music web app
+### API
+[shazam API](https://rapidapi.com/apidojo/api/shazam/)
+### Screenshot
+![screenshot](https://github.com/hanan-tuwaiq/Project02/blob/main/screenshot.png?raw=true)
 <div dir="rtl">
   
  # مشروع الإسبوع الثاني 
