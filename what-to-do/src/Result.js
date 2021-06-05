@@ -12,6 +12,9 @@ class Result extends Component {
     componentDidMount() {
         this.setState({csclass: this.props.ccs})
     }
+    componentWillUnmount() {
+        this.setState({csclass: this.props.dis})
+    }
 
     restart = () => {
         this.props.restart()

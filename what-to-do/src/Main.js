@@ -38,7 +38,7 @@ class Main extends Component {
             this.getapi()
         } else {
             this.setState({
-                ttype: type.name.toLowerCase(),
+                ttype: type.name.toLowerCase().replace(/\s+/g, ''),
                 showtype: false
             })
         }
@@ -90,7 +90,7 @@ class Main extends Component {
                     </div>
                 </div>
                 {}
-                {this.state.result&&!this.state.random ?<Result activity={this.state.data.activity} restart={this.restart} ccs={"myresult"}/> : null }
+                {this.state.result&&!this.state.random ?<Result activity={this.state.data.activity} restart={this.restart} dis={"dss"} ccs={"myresult"}/> : null }
                 {this.state.result&&this.state.random ?<Result activity={this.state.data.activity} restart={this.restart} ccs={"myresultrandom"}/> : null }
 
             </div>
