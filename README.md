@@ -15,8 +15,12 @@
 - تطبيق دالتين على الأقل من دوال Lifecycle
 - تطبيق axios
 
-  
    **ملاحظة** :
   بعد الانتهاء من تنفيذ المشروع يرجى إضافة صورة من واجهة الصفحة في ملف README.md
 
+# Api 
+ > https://rapidapi.com/contextualwebsearch/api/web-search
+
+# صورة الصفحة
+  <img src='news.png'/>
   </div>
