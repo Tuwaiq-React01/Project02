@@ -20,6 +20,7 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Button from '@material-ui/core/Button'
 import axios from 'axios'
+import GoogleLogin from 'react-google-login'
 
 const proxy = 'https://tuwaiqacademyapi.azurewebsites.net'
 
@@ -255,7 +256,7 @@ const AcedmyScreen = () => {
                 />
               </Grid>
               <Grid item xs={12}>
-                <Button
+                {/* <Button
                   onClick={() => {
                     setLogin(false)
                     setTimeout(() => {
@@ -267,7 +268,29 @@ const AcedmyScreen = () => {
                   color="primary"
                 >
                   <Typography>Sign In</Typography>
-                </Button>
+                </Button> */}
+                <GoogleLogin
+                  clientId="725272891211-91k1nnlo4acgfh53qac4rpkt52h2k5ol.apps.googleusercontent.com"
+                  buttonText="Login"
+                  onSuccess={() => {
+                    setLogin(false)
+                    setTimeout(() => {
+                      setLoading(false)
+                    }, 3000)
+                  }}
+                  onFailure={() => {
+                    toast.fail('عمليو تسجيل دخول غير صحيه', {
+                      style: { fontFamily: 'Changa' },
+                      position: 'top-right',
+                      autoClose: 3000,
+                      hideProgressBar: false,
+                      closeOnClick: true,
+                      pauseOnHover: true,
+                      draggable: true,
+                      progress: undefined,
+                    })
+                  }}
+                />
               </Grid>
             </>
           </Grid>
