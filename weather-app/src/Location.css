@@ -1,0 +1,12 @@
+Location {
+    margin-top: 3rem;
+  }
+  
+  Location input[name="city"],
+  Location input[name="country"] {
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-bottom: 2px solid whitesmoke;
+    border-radius: 0;
+  }
