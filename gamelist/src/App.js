@@ -1,13 +1,15 @@
 import "./App.css";
 import NavBar from "./components/NavBar";
 import Games from "./components/Games";
+import Favorite from "./components/Favorite";
 import Footer from "./components/Footer";
 import React, {useState} from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 
 
 function App() {
-  const games = [
+  let games = [
     { gameName: 'gta' , id : 1},
     { gameName: 'bocw' , id : 2},
     { gameName: 'cod' , id : 3},
@@ -24,13 +26,11 @@ function App() {
 
   return (
     <>
-      <NavBar favList={fav.length}/>
-      <div className="container mt-sm-5">
-        <Games list={games} addToFav={addToFav}/>
-      </div>
 
+      <NavBar favList={fav.length} addToFav={addToFav} list={games}/>
 
       <Footer />
+      
     </>
   );
 }

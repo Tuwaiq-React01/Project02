@@ -10,6 +10,8 @@ export default class Games extends Component {
   }
 
   componentDidMount() {
+    console.log(this.props.list);
+    //api call happens here111!!
     this.setState({ games: this.props.list });
   }
 
@@ -53,8 +55,10 @@ export default class Games extends Component {
     });
 
     return (
-      <div>
+      <div className="container mt-sm-5">
+
         <div className="row">{displayGames}</div>
+        <h1>GAMES CARDS HERE </h1>
       </div>
     );
   }
