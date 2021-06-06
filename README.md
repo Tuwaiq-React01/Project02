@@ -3,6 +3,27 @@
   
  # مشروع الإسبوع الثاني 
   
+# Project02_EF_ASP.NET_MVC
+
+<div dir="rtl" align="right">
+#
+اسم المتدرب : مشعل نجدي , 
+اسم المشرف : نوره محسن , 
+اسم المجموعة : نيوم 
+----------
+
+Home
+![Image of Home page](https://ibb.co/qdph86T)
+
+Memes API
+
+![Image of Memes API](https://ibb.co/WVH58jr)
+
+Sports News API
+![Image of Sports New API](https://ibb.co/gg6nS9f)
+
+
+
   <br/>
   <br/>
   
