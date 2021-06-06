@@ -1,6 +1,17 @@
-
 <div dir="rtl">
   
+### المتدرب : محمد الحربي 
+### المدربة : لمياء القحطاني 
+### مجموعة : طويق 
+<br>
+
+### Api المستخدم : 
+[Fake Store Api](https://fakestoreapi.com/) 
+
+
+<img src="https://i.ibb.co/YfKL80B/s.png">
+<hr>
+
  # مشروع الإسبوع الثاني 
   
   <br/>
