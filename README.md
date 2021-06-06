@@ -18,6 +18,14 @@
 - تطبيق axios
 
   ## العرض
-  <img src="https://a.top4top.io/p_1983k6rhw1.gif"/>
-
   </div>
+    <img src="https://a.top4top.io/p_1983k6rhw1.gif"/>
+
+<div dir="rtl" align="right" >
+    
+
+    >  اسم المتدربة: شهد الشهري 
+    >  اسم المشرفة: نورة عبدالله 
+    > الفريق: القدية
+
+</div
