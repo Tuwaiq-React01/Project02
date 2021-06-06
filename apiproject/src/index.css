@@ -16,10 +16,11 @@ body {
 .name{
   color: rgb(172, 172, 179);
   font-size: 20px;
+  background-color: rgba(39, 39, 39, 0.459);
 }
 
 .tb{
-  border-style: double;
+  border-style:hidden;
   display: inline-table;
   margin-left: 200px;
   margin-right: 200px;
@@ -27,8 +28,15 @@ body {
   padding-right: 50px;
   text-align: center;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  background-color: rgba(70, 70, 71, 0.651);
+  background-color: rgba(70, 70, 71, 0.664);
   
+}
+.title{
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: whitesmoke; 
+  
+  font-size: 40px;
 }
 
 code {
