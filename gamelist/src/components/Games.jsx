@@ -10,7 +10,6 @@ export default class Games extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.list);
     //api call happens here111!!
     this.setState({ games: this.props.list });
   }
@@ -18,17 +17,27 @@ export default class Games extends Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevState.favs !== this.state.favs) {
       this.props.addToFav(this.state.favs);
-      this.state.favs = []
+      this.state.favs = {}
     }
   }
 
   addFav(game){
-      this.setState({favs: [...this.state.favs, game]})
+      this.setState({favs: game})
+  }
+
+  removeFav(game){
+    this.props.removeFav(game)
   }
 
 
+
+  
+
+
   render() {
-    const displayGames = this.state.games.map((game, i) => {
+
+    const favMode = this.props.favMode;
+    const displayGames = this.props.list.map((game, i) => {
       return (
         <div className="col-md-3 mt-5" key={i}>
           <div className="card" style={{ width: "18rem" }}>
@@ -45,20 +54,23 @@ export default class Games extends Component {
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
-              <button onClick={()=> this.addFav(game)} className="btn btn-primary">
+{favMode ? <button onClick={()=> this.removeFav(game)} className="btn btn-danger">
+                REMOVE
+              </button> : <button onClick={()=> this.addFav(game)} className="btn btn-primary">
                 Add to Favorite
-              </button>
+              </button>}
             </div>
           </div>
         </div>
       );
     });
 
+
+
+
     return (
       <div className="container mt-sm-5">
-
         <div className="row">{displayGames}</div>
-        <h1>GAMES CARDS HERE </h1>
       </div>
     );
   }

@@ -20,15 +20,88 @@ function App() {
 
 
   function addToFav(game){
-    setFav([...fav, game]);
+    console.log(game);
+      var search = fav.find((e) => game.id == e.id)
+      if(search){
+        alert("ALREADY THERE!")
+      }else{
+        setFav([...fav, game]);
+      }
+  }
+
+  function removeAll(){
+    setFav([]);
+  }
+  function removeFav(game){
+    // let newArr = fav.splice(game, 1)
+    // setFav([newArr]);
   }
 
 
   return (
     <>
+      <Router>
+        <div>
+          <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                Game
+              </a>
+              <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#">
+                      Home
+                      <span class="visually-hidden">(current)</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <Link className="nav-link" to="/games">GAMES</Link>
+                  </li>
+                  <li class="nav-item">
+                    <Link className="nav-link" to="/favorites">Favorites <span class="badge rounded-pill bg-secondary mx-2">
+                        {fav.length}
+                      </span> </Link>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      About
+                    </a>
+                  </li>
+                  <li>
 
-      <NavBar favList={fav.length} addToFav={addToFav} list={games}/>
+                  </li>
+                </ul>
+                <form class="d-flex">
+                  <input
+                    class="form-control me-sm-2"
+                    type="text"
+                    placeholder="Search"
+                  />
+                  <button class="btn btn-secondary my-2 my-sm-0" type="submit">
+                    Search
+                  </button>
+                </form>
+              </div>
+            </div>
+          </nav>
 
+          <Switch>
+            <Route
+              exact
+              path="/games"
+              render={() => <Games list={games} addToFav={addToFav} />}
+            />
+            <Route
+              path="/favorites"
+              render={() => (
+                <Favorite favs={fav} removeFav={removeFav} removeAll={removeAll}/>
+              )}
+            />
+
+          </Switch>
+        </div>
+      </Router>
       <Footer />
       
     </>
