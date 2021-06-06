@@ -45,7 +45,7 @@ export default class App extends Component {
   async callApi(randomColor, length) {
     axios({
       method: "get",
-      url: "/scheme?hex=" + randomColor + "&rgb=0,71,171&hsl=215,100%,34%&cmyk=100,58,0,33&mode=quad&count=" + length
+      url: "/scheme?hex=0047AB&rgb=0,71,171&hsl=215,100%,34%&cmyk=100,58,0,33&mode=analogic&count="+ length,     
     }).then((response) => {
       console.log("Inside the response!!!")
       console.log(response.data);
@@ -55,7 +55,7 @@ export default class App extends Component {
 
     }).catch((error) => {
       console.log(error);
-    })
+    })    
   }
 
   onChangeText(e) {
@@ -102,6 +102,12 @@ export default class App extends Component {
     let itemsList = this.state.itemsList.map((element, index) => (
       <Item item={element} key={index} />
     ))
+    console.log(this.state.showWheel && (this.state.data.length == this.state.itemsList.length));
+
+    console.log(this.state.showWheel);
+    console.log(this.state.data.length);
+    console.log(this.state.itemsList.length);
+    
     return (
       <div className="App">
         <div className="App-header">
@@ -120,7 +126,7 @@ export default class App extends Component {
             </div>
           }
           <div>
-            {(this.state.showWheel && this.state.data.length != [] && this.state.data.length == this.state.itemsList.length) ? <Wheel itemsList={this.state.itemsList} colors={this.state.data} /> : null}
+            {(this.state.showWheel && (this.state.data.length == this.state.itemsList.length)) ? <Wheel itemsList={this.state.itemsList} colors={this.state.data} /> : null}
           </div>
           <button type="button" className="btn btn-danger mt-3" onClick={(e) => this.hideWheel(e)}>Restart</button>
         </div>
