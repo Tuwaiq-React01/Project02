@@ -57,6 +57,11 @@ const useStyles = makeStyles((theme) => ({
     color: '#121212',
     paddingBottom: theme.spacing(3),
   },
+  google: {
+    width: '100%',
+    textAlign: 'center',
+    fontFamily: 'Balsamiq Sans',
+  },
 }))
 
 const AcedmyScreen = () => {
@@ -270,6 +275,7 @@ const AcedmyScreen = () => {
                   <Typography>Sign In</Typography>
                 </Button> */}
                 <GoogleLogin
+                  className={classes.google}
                   clientId="725272891211-91k1nnlo4acgfh53qac4rpkt52h2k5ol.apps.googleusercontent.com"
                   buttonText="Login"
                   onSuccess={() => {
