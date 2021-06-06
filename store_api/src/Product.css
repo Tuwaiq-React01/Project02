@@ -1,0 +1,41 @@
+.RootDiv{
+    display: grid;
+    height: 800px;
+    align-content: center;
+    grid-template-columns: auto auto auto;
+    grid-gap: 30px;
+    margin-top: 1000px;
+}
+
+h1{
+    font-size: 50px;
+    font-family: 'Open Sans', sans-serif;
+    color:rgb(17, 12, 85);
+    text-align: center;
+    text-shadow: 2px 3px #656664bb
+}
+
+.title{
+    font-size: 15px;
+}
+
+body{
+    background-color: rgba(115, 115, 121, 0.219);
+}
+
+.RootDiv> div {
+    background-color: rgb(247, 247, 247);
+    text-align: center;
+    font-size: 15px;
+    color:rgb(99, 97, 94);
+    box-shadow: 5px 10px #36353554
+  }
+
+img{
+    height:250px;
+    width: 150px;
+}
+.showDetils{
+    background-color: grey;
+    color: rgb(29, 34, 58);
+}
