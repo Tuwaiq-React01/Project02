@@ -20,7 +20,7 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Button from '@material-ui/core/Button'
 import axios from 'axios'
-import GoogleLogin from 'react-google-login'
+import { GoogleLogin, GoogleLogout } from 'react-google-login'
 
 const proxy = 'https://tuwaiqacademyapi.azurewebsites.net'
 
@@ -277,15 +277,17 @@ const AcedmyScreen = () => {
                 <GoogleLogin
                   className={classes.google}
                   clientId="725272891211-91k1nnlo4acgfh53qac4rpkt52h2k5ol.apps.googleusercontent.com"
-                  buttonText="Login"
-                  onSuccess={() => {
+                  buttonText="Sign In"
+                  isSignedIn={true}
+                  onSuccess={(res) => {
+                    console.log(res)
                     setLogin(false)
                     setTimeout(() => {
                       setLoading(false)
                     }, 3000)
                   }}
                   onFailure={() => {
-                    toast.error('عمليو تسجيل دخول غير صحيه', {
+                    toast.error('عملية تسجيل دخول غير صحيحة', {
                       style: { fontFamily: 'Changa' },
                       position: 'top-right',
                       autoClose: 3000,
@@ -297,6 +299,26 @@ const AcedmyScreen = () => {
                     })
                   }}
                 />
+              </Grid>
+              <Grid item xs={12}>
+                <GoogleLogout
+                  className={classes.google}
+                  clientId="725272891211-91k1nnlo4acgfh53qac4rpkt52h2k5ol.apps.googleusercontent.com"
+                  buttonText="Signout"
+                  onLogoutSuccess={(res) => {
+                    console.log(res)
+                    toast.success('عملية تسجيل خروج صحيحة', {
+                      style: { fontFamily: 'Changa' },
+                      position: 'top-right',
+                      autoClose: 3000,
+                      hideProgressBar: false,
+                      closeOnClick: true,
+                      pauseOnHover: true,
+                      draggable: true,
+                      progress: undefined,
+                    })
+                  }}
+                ></GoogleLogout>
               </Grid>
             </>
           </Grid>
