@@ -1,36 +1,51 @@
-let MovieList = [];
+import './App.css'
+import React, {useState} from 'react'
+import { useAlert } from "react-alert";
 
-
-
-export const MovieCard = ( {Movie}) => {
+export const MovieCard = ({ Movie, MovieList, InMyFav , removeMovie }) => {
+  const [Add, setAdd] = useState(!Movie.InMyList);
+  const alert = useAlert();
   const addToFav = Movie => {
-    //console.log(Movie.Title);
-    MovieList = [...MovieList,  Movie ];
-    //setTodos(newTodos);
+    Movie.InMyList = true;
+    MovieList.push(Movie);
+    alert.success("Added to List!");
+    localStorage.setItem('MyMovies', MovieList);
   };
 
-  
-
-    return (
-      <div className="flip-card">
+  const removeFromFav = Movie => {
+    Movie.InMyList = false;
+    removeMovie();
+    alert.success("Removed from List!");
+  };
+  return (
+    <div className="flip-card">
       <div className="flip-card-inner">
         <div className="flip-card-front">
-        <img className="card-img-top" src={Movie.Poster} alt="Movie image" style={{width: "200px", height: "300px"}}></img>
-         </div>
-        <div className="flip-card-back text-white bg-info mb-3">
-          <div className="card-header bg-transparent border-success"><h5>{Movie.Title}</h5></div>
+          <img
+            className="card-img-top"
+            src={Movie.Poster}
+            alt="Movie image"
+            style={{ width: '200px', height: '300px' }}
+          ></img>
+        </div>
+        <div className="flip-card-back text-white">
+          <div className="">
+            <h5>{Movie.Title}</h5>
+          </div>
           <div className="card-body text-black">
             <h6 className="card-title">Year: {Movie.Year}</h6>
           </div>
           <div className="card-footer bg-transparent border-success">
-          <button type="button" onClick={() => addToFav(Movie)} class="btn btn-dark bottom">Add to My List</button>
-          <button type="button" onClick={() => MovieList.map(movie => {
-      console.log(movie.Title);
-    })} className="btn btn-dark bottom">show my fav</button>
-          
+          {
+            InMyFav ? <button type="button" className="btn btn-danger bottom" onClick={() => removeFromFav(Movie)}>Remove From List</button> : <button type="button" disabled={!Add} onClick={() =>  {
+              if(Add) addToFav(Movie);
+              else removeFromFav(Movie);
+              setAdd(!Add);
+            }} className="btn btn-dark bottom">{Add && !InMyFav ? "Add to My List" : "In My List"}</button>
+          }
           </div>
         </div>
       </div>
-      </div>
-    )
+    </div>
+  )
 }

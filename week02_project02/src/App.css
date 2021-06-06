@@ -91,7 +91,7 @@
   height: 100%;
   padding: 10px;
   color: white;
-  background-color: rebeccapurple;
+  background-color: rgb(8, 6, 32) !important;
   border-color: red;
   font-size: 10px;
   transform: rotateY(180deg);
@@ -113,6 +113,28 @@
   align-items: center;
 }
 
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background-color: black;
+  color: white;
+}
+
+.nav-links {
+  width: 13%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  list-style: none;
+  padding-right: 0%;
+}
+
+.link-style {
+  color: white;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -122,6 +144,10 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.fullH {
+  height: 300px;
 }
 
 .App-link {
@@ -135,4 +161,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.homeStyle {
+  color: white;
+  padding-left: 0%;
 }

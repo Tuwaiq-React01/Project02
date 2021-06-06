@@ -1,19 +1,26 @@
 
-import { Navbar, Nav } from 'react-bootstrap';
-
-
+import {Link} from 'react-router-dom'
+import './App.css';
 export const NavBar = () => {
+    const navStyle = {
+        color: 'white',
+        textDecoration: 'none'
+    }
     return (
         <>
-         <Navbar bg="dark" variant="dark">
-    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-    <Nav className="mr-auto">
-       
-      <Nav.Link>About</Nav.Link>
-      <Nav.Link href="#features">My List</Nav.Link>
-    </Nav>
-    
-  </Navbar>
-      </>
+            <nav className="mr-auto wh">
+                <Link className="homeStyle" style={navStyle} to="/">    
+                    <h5> Home </h5>
+                </Link>
+                <ul className="nav-links wh">
+                    <Link style={navStyle} to="/myList">
+                        <li> My List </li>
+                    </Link>
+                    <Link style={navStyle}   to="/about">
+                        <li> About </li>
+                    </Link>
+                </ul>
+            </nav>
+        </>
     )
 }
