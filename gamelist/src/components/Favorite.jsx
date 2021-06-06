@@ -43,16 +43,15 @@ export default class Favorite extends Component {
         //     )
         // })
         return (
-            <div>
-                <h1 className="display-4">Favorites: </h1> <button onClick={this.removeAll}>REMOVE ALL</button>
+            <div className="container">
+                <h1 className="display-4">Favorites: </h1> <button className="btn btn-danger" onClick={this.removeAll}>REMOVE ALL</button>
 
                 {this.props.favs.length ? 
                 
                 <Games list={this.props.favs} favMode={true} removeFav={this.removeFav} />
                 
-                : <h1>you don't have any favotire games.</h1>}
+                : <div className="text-center"><h1 className=" display-6 emptyList">you don't have any favotire games.</h1> <a role="button" className="btn btn-info" href="/games">Browse Games! </a> </div>}
                 
-
             </div>
         )
     }

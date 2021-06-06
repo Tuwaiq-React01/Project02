@@ -41,7 +41,7 @@ export default class Games extends Component {
     const displayGames = this.props.list.map((game, i) => {
       return (
         <div className="col-md-3 mt-5" key={i}>
-          <div className="card" style={{ width: "18rem" }}>
+          <div className="card text-white bg-dark" style={{ width: "18rem" }}>
             <img
               src={game.background_image}
               className="card-img-top"
@@ -55,11 +55,19 @@ export default class Games extends Component {
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
+
+              <div className="rating">Rating: <div className={`rate ${
+              game.metacritic >= 90 ? "above90" : "below90"
+            }`}> {game.metacritic}%</div> </div>
+
+
+
 {favMode ? <button onClick={()=> this.removeFav(game)} className="btn btn-danger">
                 REMOVE
               </button> : <button onClick={()=> this.addFav(game)} className="btn btn-primary">
                 Add to Favorite
               </button>}
+
             </div>
           </div>
         </div>
@@ -70,7 +78,7 @@ export default class Games extends Component {
 
 
     return (
-      <div className="container mt-sm-5">
+      <div className="container">
         <div className="row">{displayGames}</div>
       </div>
     );
