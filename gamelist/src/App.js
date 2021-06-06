@@ -5,6 +5,7 @@ import Favorite from "./components/Favorite";
 import Footer from "./components/Footer";
 import React, {useState} from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import AllGames from "./components/AllGames";
 
 
 
@@ -30,6 +31,8 @@ function App() {
   }
 
   function removeAll(){
+
+    
     setFav([]);
   }
   function removeFav(game){
@@ -90,7 +93,7 @@ function App() {
             <Route
               exact
               path="/games"
-              render={() => <Games list={games} addToFav={addToFav} />}
+              render={() => <AllGames list={games} addToFav={addToFav} />}
             />
             <Route
               path="/favorites"
