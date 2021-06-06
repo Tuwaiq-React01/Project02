@@ -1,0 +1,21 @@
+.uniCard{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 15px;
+    background-color: rgb(197, 191, 182);
+}
+
+.btn{
+    padding: 10px;
+    font-style: normal;
+    background-color: teal;
+    color: whitesmoke;
+    border-radius: 8px;
+}
+
+.uniCard:hover{
+    box-shadow: 1px 3px 13px rgba(0, 0, 0, 0.5);
+}

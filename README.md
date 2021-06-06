@@ -2,7 +2,7 @@
 <div dir="rtl">
   
  # مشروع الإسبوع الثاني 
-  
+  <img src="./pic.gif">
   <br/>
   <br/>
   
