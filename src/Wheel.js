@@ -4,12 +4,28 @@ import React, { Component } from 'react'
 export default class Wheel extends Component {
 
     constructor(props) {
-        super(props);         
+        super(props);
     }
 
     componentDidMount() {
 
-        const sectors = this.props.wheelSectors;
+        const itemsList = this.props.itemsList;
+        const colors = this.props.colors;
+        //let length = this.state.itemsList.length;
+        
+        // let constColors = theColors.map(function (element, index) {
+        //     theColors[index] = "#" + Math.floor(Math.random() * 16777215).toString(16);
+        //     console.log(theColors[index]);
+        // })
+        console.log("jjjjjjjjjj");
+        console.log(colors);
+        //let randomColors = this.state.data.colors;
+        //console.log(randomColors);
+        let sectors = itemsList.map(function (element, index) {
+            return { label: element, color: colors[index].hex.value }
+        });
+        //console.log("kakkkakakakak");
+        //console.log(colors);
 
         const rand = (m, M) => Math.random() * (M - m) + m;
         const tot = sectors.length;

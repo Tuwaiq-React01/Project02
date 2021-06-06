@@ -7,16 +7,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
 
-const sectors = [
-  { color: "#f82", label: "Stack" },
-  { color: "#0bf", label: "10" },
-  { color: "#fb0", label: "200" },
-  { color: "#0fb", label: "50" },
-  { color: "#b0f", label: "100" },
-  { color: "#f0b", label: "5" },
-  { color: "#bf0", label: "500" },]
+// const sectors = [
+//   { color: "#f82", label: "Stack" },
+//   { color: "#0bf", label: "10" },
+//   { color: "#fb0", label: "200" },
+//   { color: "#0fb", label: "50" },
+//   { color: "#b0f", label: "100" },
+//   { color: "#f0b", label: "5" },
+//   { color: "#bf0", label: "500" },]
 
-let colors = ["#f82", "#0bf", "#fb0", "#0fb", "#b0f", "#f0b", "#bf0"]
+let theColors = ["#f82", "#0bf", "#fb0", "#0fb", "#b0f", "#f0b", "#bf0"]
 let labels = ["1", "2", "3", "4", "5", "6", "7"]
 
 export default class App extends Component {
@@ -24,43 +24,36 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      colors: colors,
+      colors: [],
       labls: labels,
-      sectors: [
-        { color: colors[0], label: "Stack" },
-        { color: colors[1], label: "10" },
-        { color: colors[2], label: "200" },
-        { color: colors[3], label: "50" },
-        { color: colors[4], label: "100" },
-        { color: colors[5], label: "5" },
-        { color: colors[6], label: "500" },],
+      sectors: [],
       newItem: "",
       itemsList: [],
       showWheel: false,
-      OKClicked: false, 
+      OKClicked: false,
       data: []
     }
-    this.setColor = this.setColor.bind(this); 
+    this.setColor = this.setColor.bind(this);
   }
 
-  componentDidMount(){
-    //this.callApi()
+  componentDidMount() {
+    // let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    // let length = 20;
+    // this.callApi(randomColor, length);
   }
 
-  callApi(randomColor, length){
+  async callApi(randomColor, length) {
     axios({
       method: "get",
-      url: "/scheme?hex="+randomColor+"&rgb=0,71,171&hsl=215,100%,34%&cmyk=100,58,0,33&mode=analogic&count="+length
-    }).then((response)=>{
+      url: "/scheme?hex=" + randomColor + "&rgb=0,71,171&hsl=215,100%,34%&cmyk=100,58,0,33&mode=analogic&count=" + length
+    }).then((response) => {
       console.log("Inside the response!!!")
       console.log(response.data);
-      //console.log(response.data[0]);
       this.setState({
-        data: response.data
+        data: response.data.colors
       })
-      //this.print(response.data);
-     
-    }).catch((error)=>{
+
+    }).catch((error) => {
       console.log(error);
     })
   }
@@ -82,26 +75,17 @@ export default class App extends Component {
 
   setColor() {
     return Math.floor(Math.random() * 16777215).toString(16);
-  }    
+  }
 
-    showWheel = async (e) => {
-    let length = this.state.itemsList.length;
+  showWheel(e) {
     let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    let length = this.state.itemsList.length;
     //console.log("random color:  "+randomColor);
-    let m = await this.callApi(randomColor, length);
-    // colors = colors.map(function (element, index) {
-    //   colors[index] = "#" + Math.floor(Math.random() * 16777215).toString(16);
-    //   console.log(colors[index]);
-    // })
-    console.log("jjjjjjjjjj");        
-    let randomColors = this.state.data.colors;
-    console.log(randomColors);
-    let newSectors = this.state.itemsList.map(function (element, index) {
-      return { label: element, color: randomColors[index].hex.value }
-    });
+    this.callApi(randomColor, length);
+    console.log("this.state.data.length");
+    console.log(this.state.data.length);
     this.setState({
       showWheel: true,
-      sectors: newSectors,
       OKClicked: true
     })
   }
@@ -120,8 +104,8 @@ export default class App extends Component {
     ))
     return (
       <div className="App">
-        <div className="App-header">          
-        <h1 class="display-4 text-muted">Tuwaiq Random Picker</h1>
+        <div className="App-header">
+          <h1 class="display-4 text-muted">Tuwaiq Random Picker</h1>
           <img src={logo} width="130" height="100" class="rounded mx-auto d-block mb-4" />
           {this.state.OKClicked ? null :
             <div>
@@ -131,12 +115,12 @@ export default class App extends Component {
                 </div>
                 <input type="text" placeholder="Add your item here!!" onChange={(e) => this.onChangeText(e)} value={this.state.newItem} class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-default" />
               </div>
-              <button type="button" className="btn btn-warning" onClick={(e) => this.state.newItem!==""?this.addTheItem(e):null}>ADD</button>
-              <button type="button" className="btn btn-warning mx-3" onClick={(e) => this.state.itemsList.length<2?null:this.showWheel(e)}>SPIN</button>
+              <button type="button" className="btn btn-warning" onClick={(e) => this.state.newItem !== "" ? this.addTheItem(e) : null}>ADD</button>
+              <button type="button" className="btn btn-warning mx-3" onClick={(e) => this.state.itemsList.length < 2 ? null : this.showWheel(e)}>SPIN</button>
             </div>
           }
-          <div> 
-            {this.state.showWheel ? <Wheel wheelSectors={this.state.sectors} /> : null}
+          <div>
+            {(this.state.showWheel && this.state.data.length != [] && this.state.data.length == this.state.itemsList.length) ? <Wheel itemsList={this.state.itemsList} colors={this.state.data} /> : null}
           </div>
           <button type="button" className="btn btn-danger mt-3" onClick={(e) => this.hideWheel(e)}>Restart</button>
         </div>
