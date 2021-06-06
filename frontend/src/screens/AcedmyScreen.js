@@ -285,7 +285,7 @@ const AcedmyScreen = () => {
                     }, 3000)
                   }}
                   onFailure={() => {
-                    toast.fail('عمليو تسجيل دخول غير صحيه', {
+                    toast.error('عمليو تسجيل دخول غير صحيه', {
                       style: { fontFamily: 'Changa' },
                       position: 'top-right',
                       autoClose: 3000,
