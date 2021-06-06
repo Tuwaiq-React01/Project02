@@ -4,6 +4,7 @@ import Wheel from './Wheel.js'
 import Item from './Item.js';
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
 
 
 const sectors = [
@@ -36,10 +37,32 @@ export default class App extends Component {
       newItem: "",
       itemsList: [],
       showWheel: false,
-      OKClicked: false
+      OKClicked: false, 
+      data: []
     }
-    this.setColor = this.setColor.bind(this);
+    this.setColor = this.setColor.bind(this); 
+  }
 
+  componentDidMount(){
+    //this.callApi()
+  }
+
+  callApi(randomColor, length){
+    axios({
+      method: "get",
+      url: "/scheme?hex="+randomColor+"&rgb=0,71,171&hsl=215,100%,34%&cmyk=100,58,0,33&mode=analogic&count="+length
+    }).then((response)=>{
+      console.log("Inside the response!!!")
+      console.log(response.data);
+      //console.log(response.data[0]);
+      this.setState({
+        data: response.data
+      })
+      //this.print(response.data);
+     
+    }).catch((error)=>{
+      console.log(error);
+    })
   }
 
   onChangeText(e) {
@@ -59,15 +82,22 @@ export default class App extends Component {
 
   setColor() {
     return Math.floor(Math.random() * 16777215).toString(16);
-  }
+  }    
 
-  showWheel(e) {
-    colors = colors.map(function (element, index) {
-      colors[index] = "#" + Math.floor(Math.random() * 16777215).toString(16);
-      console.log(colors[index]);
-    })
+    showWheel = async (e) => {
+    let length = this.state.itemsList.length;
+    let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    //console.log("random color:  "+randomColor);
+    let m = await this.callApi(randomColor, length);
+    // colors = colors.map(function (element, index) {
+    //   colors[index] = "#" + Math.floor(Math.random() * 16777215).toString(16);
+    //   console.log(colors[index]);
+    // })
+    console.log("jjjjjjjjjj");        
+    let randomColors = this.state.data.colors;
+    console.log(randomColors);
     let newSectors = this.state.itemsList.map(function (element, index) {
-      return { label: element, color: "#" + Math.floor(Math.random() * 16777215).toString(16) }
+      return { label: element, color: randomColors[index].hex.value }
     });
     this.setState({
       showWheel: true,
@@ -92,7 +122,7 @@ export default class App extends Component {
       <div className="App">
         <div className="App-header">          
         <h1 class="display-4 text-muted">Tuwaiq Random Picker</h1>
-          <img src={logo} width="150" height="100" class="rounded mx-auto d-block mb-4" />
+          <img src={logo} width="130" height="100" class="rounded mx-auto d-block mb-4" />
           {this.state.OKClicked ? null :
             <div>
               {itemsList}
@@ -105,14 +135,10 @@ export default class App extends Component {
               <button type="button" className="btn btn-warning mx-3" onClick={(e) => this.state.itemsList.length<2?null:this.showWheel(e)}>SPIN</button>
             </div>
           }
-          <div>
+          <div> 
             {this.state.showWheel ? <Wheel wheelSectors={this.state.sectors} /> : null}
           </div>
-
-          <button type="button" className="btn btn-danger m-3" onClick={(e) => this.hideWheel(e)}>Restart</button>
-
-
-
+          <button type="button" className="btn btn-danger mt-3" onClick={(e) => this.hideWheel(e)}>Restart</button>
         </div>
       </div>
     )
