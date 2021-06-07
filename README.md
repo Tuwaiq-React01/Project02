@@ -3,6 +3,7 @@
   
  # مشروع الإسبوع الثاني 
   
+  ![Demo](https://github.com/AWManeea/Project02/blob/main/foxes.png?raw=true)
   <br/>
   <br/>
   
