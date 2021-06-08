@@ -1,4 +1,4 @@
-![WeatherApp](https://media1.giphy.com/media/aAD6HMiy0ibfaufsEk/giphy.gif?cid=790b7611924851dfd70ead8cebdd2485c875026bd4185d4c&rid=giphy.gif&ct=g)
+![WeatherApp](https://im2.ezgif.com/tmp/ezgif-2-38a4c8d25f8e.gif)
 
 <div dir="rtl">
   
