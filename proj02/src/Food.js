@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import './photo-grid.css'
 import './base.css'
-
+import './animated-grid.css'
 
 export default class Food extends Component {
   constructor(props) {
@@ -12,7 +11,7 @@ export default class Food extends Component {
     }
   }
   componentDidMount() {
-    for(var i = 0; i <12 ; i++){this.callApi()};
+    for(var i = 0; i <13 ; i++){this.callApi()};
   }
   componentWillUnmount(){
     window.onbeforeunload = function() {
@@ -37,15 +36,16 @@ export default class Food extends Component {
   render() {
     
     return (
-        <div class="photo-grid">
-          {this.state.data.length < 12?console.log("hhgghg") : 
+      
+        <div>
+          {this.state.data.length < 13?console.log("hhgghg") : 
             
-          <div>
+          <session class="animated-grid">
       <div
-        class="card card-tall card-wide" style= { { backgroundImage: `url( ${ this.state.data[0].image })` } }>
+        class="card" style= { { backgroundImage: `url( ${ this.state.data[0].image })` } }>
       </div>
       <div
-        class="card card-tall"
+        class="card"
         style= { { backgroundImage: `url( ${ this.state.data[1].image })` } }
       >
       </div>
@@ -98,10 +98,16 @@ export default class Food extends Component {
         class="card"
         style= { { backgroundImage: `url( ${ this.state.data[11].image })` } }
       >
+
       </div>
-      </div>}
+      <div
+        class="card"
+        style= { { backgroundImage: `url( ${ this.state.data[12].image })` } }
+      ></div>
+      </session> }
+    
     </div>
-      
+
     )
   }
 
