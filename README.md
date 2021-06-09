@@ -20,4 +20,8 @@
    **ملاحظة** :
   بعد الانتهاء من تنفيذ المشروع يرجى إضافة صورة من واجهة الصفحة في ملف README.md
 
+<img src="https://res.cloudinary.com/duuconncq/image/upload/v1623234380/pic1_vfj7qp.png" alt="">
+<img src="https://res.cloudinary.com/duuconncq/image/upload/v1623234380/pic3_rmiwg5.png" alt="">
+<img src="https://res.cloudinary.com/duuconncq/image/upload/v1623234379/pic4_gyvari.png" alt="">
+
   </div>
