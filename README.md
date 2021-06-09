@@ -16,8 +16,6 @@
 - تطبيق دالتين على الأقل من دوال Lifecycle
 - تطبيق axios
 
-  
-   **ملاحظة** :
-  بعد الانتهاء من تنفيذ المشروع يرجى إضافة صورة من واجهة الصفحة في ملف README.md
-
+  ![First Screenshot](https://raw.githubusercontent.com/Abdullah-ALHaif/Project02/main/1st%20screenshot.jpg)
+  ![Second Screenshot](https://raw.githubusercontent.com/Abdullah-ALHaif/Project02/main/2nd%20screenshot.jpg)
   </div>
