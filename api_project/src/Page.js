@@ -28,12 +28,12 @@ export default class Page extends Component {
     }
     render() {
         return (
-            <div >
-                <p>{this.state.data.map((item, i) => {
-                    return (
-                            <div key={i} >
-                                <div className="grid-container">
-                                <Card style={{ width: '18rem' }} className="grid-item">
+            <Container>
+                <Row>
+                    {this.state.data.map((item, i) => {
+                        return (
+                            <Col>
+                                <Card style={{ width: '18rem' }} className="card" key={i}>
                                     <Card.Img className="image" variant="top" src={item.thumbnail} />
                                     <Card.Body>
                                         <Card.Title>Game Name: {item.title}</Card.Title>
@@ -43,12 +43,11 @@ export default class Page extends Component {
                                         <a href={item.freetogame_profile_url}> <Button variant="danger">Play</Button></a>
                                     </Card.Body>
                                 </Card>
-                                </div>
-                            </div>
-                    )
-                })}</p>
-
-            </div>
+                            </Col>
+                        )
+                    })}
+                </Row>
+            </Container>
         )
     }
 }
