@@ -1,53 +1,62 @@
 import React, { Component } from 'react'
-import FacebookLogin from 'react-facebook-login'
-import Form from './Form'
+import Memes from './Memes'
+import SportsNews from './SportsNews'
+import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 export default class App extends Component {
-constructor(props){
-  super(props);
-  this.state = {
-    name: "",
-    email:"",
-    pictuer : "",
-    token:""
-  };
-}
-
-   responseFacebook = (response) => { // the response is the whole data which is gotten from the facebook
-    if (response.status !== "unknown") {
-      this.setState({ name: response.name })
-      this.setState({ email: response.email })
-      this.setState({ picture: response.picture.data.url })
-      this.setState({ token: response.accessToken })
-    }
-    else {
-      console.log("you are not singned in");
+  constructor(props) {
+    super(props);
+    this.state = {
+      mountedOne: true,
+      mountedTwo: false,
+      mountedThree: false
     }
   }
-  
+  oneT() {
+    this.setState({ mountedOne: true, mountedTwo: false, mountedThree: false })
+  }
+  twoT() {
+    this.setState({ mountedOne: false, mountedTwo: true, mountedThree: false })
+  }
+  threeT() {
+    this.setState({ mountedOne: false, mountedTwo: false, mountedThree: true })
+  }
   render() {
     return (
-    
-      
-      <center>
-        <h1>Login</h1>
-        <Form label="username" type ="text" />
-        <Form label="Enter your password" type ="password" />
+      <div>
+        <div className="container-fluid">
+          <nav className="navbar navbar-inverse navbar-expand">
+            <div className="container-fluid">
+              <ul className="nav navbar-nav">
+                <li onClick={() => this.oneT()} style={{ color: '#bf1363'  }} id="len1" className="hoverable" >Home</li>
+                <li onClick={() => this.twoT()}><a style={{ color: '#bf1363'  }} id="len2" className="hoverable" href="#">Memes</a></li>
+                <li onClick={() => this.threeT()}><a style={{ color: '#bf1363' }} id="len3" className="hoverable" href="#">SportsNews</a></li>
+              </ul>
+            </div>
+          </nav>
+          <div className="container">
+            <div>
 
-        <h2>or Login using Facebook</h2>
-         <FacebookLogin
-    appId="1492015204466948"
-    autoLoad={false} // the facebook login will be auto requested
-    fields="name,email,picture"
-    callback={this.responseFacebook} />,
-    { this.state.token ? 
-    <div>
-        <h3>Welcome {this.state.name}</h3>
-        <img src={this.state.pictuer} />
-        <h3> Your email is {this.state.email}</h3>
-    </div> : null }
-    
-      </center>
+            {this.state.mountedOne ? <div >
+              <div className="page-title" >
+                <h1 >Welcome To My Humble React API Project </h1> <br/>
+                <p >
+                  In this page you can choose one of two catagories <br />
+       you can choose to browse sports news or you can check our vast collection of MEMES , choose what suits you ! <br />
+       Enjoy !
+      </p>
+              </div >
+            </div> : this.state.mountedTwo ? <Memes /> : this.state.mountedThree ? <SportsNews /> : null}
+
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
     )
   }
 }
+

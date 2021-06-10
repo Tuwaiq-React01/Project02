@@ -2,7 +2,7 @@
   
  # مشروع الإسبوع الثاني 
   
-# Project02_EF_ASP.NET_MVC
+# Project02
 
 <div dir="rtl" align="right">
 #
