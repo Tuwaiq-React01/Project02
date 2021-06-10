@@ -1,5 +1,5 @@
 
-<div dir="rtl">
+<div >
   
  # Project 2
   
